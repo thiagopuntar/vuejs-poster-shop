@@ -20,12 +20,22 @@
     </div>
     <div class="main">
         <div class="products">
-            <p>Products go here.</p>
+            <ul class="product-list">
+                <li class="product-title" v-for="(item, index) in items" > 
+                    {{ item.title }} 
+                    <button @click="addToCart(index)" class="btn">Add to cart</button>
+                </li>
+            </ul>
         </div>
         <div class="cart">
             <h2>Shopping Cart</h2>
             <div>
-                No items in the cart.
+                <ul>
+                    <li v-for="itemCart in cart">
+                        {{ itemCart.title }}
+                        {{ itemCart.qty }}
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -33,6 +43,7 @@
 
 <!-- Scripts -->
 <script src="/reload/reload.js"></script>
+<script src="/node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript" src="public/script.js"></script>
 
 </body>
