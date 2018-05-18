@@ -10,6 +10,8 @@ new Vue({
     },
     methods: {
         addToCart(index) {
+            let teste;
+
             let item = this.items[index];
             let itemCart = this.cart.find((x => x.id == item.id))
             
